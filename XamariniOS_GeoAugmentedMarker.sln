@@ -1,0 +1,29 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamariniOS_GeoAugmentedMarker", "iOS\XamariniOS_GeoAugmentedMarker.csproj", "{13031754-55A5-4C55-B58A-6B9ABD1719ED}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhone = Release|iPhone
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{13031754-55A5-4C55-B58A-6B9ABD1719ED}.Debug|Any CPU.ActiveCfg = Debug|iPhoneSimulator
+		{13031754-55A5-4C55-B58A-6B9ABD1719ED}.Debug|Any CPU.Build.0 = Debug|iPhoneSimulator
+		{13031754-55A5-4C55-B58A-6B9ABD1719ED}.Release|Any CPU.ActiveCfg = Release|iPhone
+		{13031754-55A5-4C55-B58A-6B9ABD1719ED}.Release|Any CPU.Build.0 = Release|iPhone
+		{13031754-55A5-4C55-B58A-6B9ABD1719ED}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{13031754-55A5-4C55-B58A-6B9ABD1719ED}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{13031754-55A5-4C55-B58A-6B9ABD1719ED}.Release|iPhone.ActiveCfg = Release|iPhone
+		{13031754-55A5-4C55-B58A-6B9ABD1719ED}.Release|iPhone.Build.0 = Release|iPhone
+		{13031754-55A5-4C55-B58A-6B9ABD1719ED}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{13031754-55A5-4C55-B58A-6B9ABD1719ED}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{13031754-55A5-4C55-B58A-6B9ABD1719ED}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{13031754-55A5-4C55-B58A-6B9ABD1719ED}.Debug|iPhone.Build.0 = Debug|iPhone
+	EndGlobalSection
+EndGlobal

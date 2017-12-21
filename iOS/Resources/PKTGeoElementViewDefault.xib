@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="PKTGeoElementViewDefault">
+            <rect key="frame" x="0.0" y="0.0" width="180" height="120"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="map-marker-Yellow.png" translatesAutoresizingMaskIntoConstraints="NO" id="ibe-ck-4cd">
+                    <rect key="frame" x="65" y="0.0" width="50" height="80"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DCb-HQ-HZH">
+                    <rect key="frame" x="0.0" y="82" width="180" height="25"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="13"/>
+                    <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jra-b3-Wfy" userLabel="gestureView" customClass="customGestureView">
+                    <rect key="frame" x="0.0" y="0.0" width="180" height="120"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    <gestureRecognizers/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Jra-b3-Wfy" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="0pC-wt-ucN"/>
+                <constraint firstItem="Jra-b3-Wfy" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="JWb-ju-uJc"/>
+                <constraint firstAttribute="trailing" secondItem="Jra-b3-Wfy" secondAttribute="trailing" id="Jts-ag-7rT"/>
+                <constraint firstAttribute="bottom" secondItem="Jra-b3-Wfy" secondAttribute="bottom" id="Pzv-71-HJq"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="gestureView" destination="Jra-b3-Wfy" id="ave-QR-f0T"/>
+                <outlet property="imageView" destination="ibe-ck-4cd" id="bnv-G9-aTe"/>
+                <outlet property="nameLabel" destination="DCb-HQ-HZH" id="WgC-UU-UYY"/>
+            </connections>
+            <point key="canvasLocation" x="336" y="259"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="map-marker-Yellow.png" width="30" height="45"/>
+    </resources>
+</document>

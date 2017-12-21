@@ -1,0 +1,15 @@
+﻿<Properties StartupConfiguration="{13031754-55A5-4C55-B58A-6B9ABD1719ED}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/AppDelegate.cs">
+    <Files>
+      <File FileName="iOS/AppDelegate.cs" Line="57" Column="4" />
+      <File FileName="iOS/ViewController.cs" Line="30" Column="82" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.XamariniOS__GeoAugmentedMarker PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.632F0B38-B9E8-456B-A461-903300F4EF31" />
+  <MultiItemStartupConfigurations />
+</Properties>

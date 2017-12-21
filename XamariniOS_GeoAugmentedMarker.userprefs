@@ -1,0 +1,28 @@
+﻿<Properties StartupConfiguration="{13031754-55A5-4C55-B58A-6B9ABD1719ED}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ViewController.cs">
+    <Files>
+      <File FileName="iOS/AppDelegate.cs" Line="56" Column="4" />
+      <File FileName="iOS/ViewController.cs" Line="20" Column="3" />
+      <File FileName="iOS/Main.cs" Line="8" Column="40" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="XamariniOS_GeoAugmentedMarker" expanded="True">
+            <Node name="XamariniOS_GeoAugmentedMarker" expanded="True">
+              <Node name="References" expanded="True" />
+              <Node name="Packages" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.XamariniOS__GeoAugmentedMarker PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.b9984644fa672d860a24398e6fbec9a852fedce6" />
+  <MultiItemStartupConfigurations />
+</Properties>

@@ -1,0 +1,747 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProjectGuid>{13031754-55A5-4C55-B58A-6B9ABD1719ED}</ProjectGuid>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>PikkartGeoTutorial.iOS</RootNamespace>
+    <AssemblyName>PikkartGeoTutorial.iOS</AssemblyName>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchFastDev>true</MtouchFastDev>
+    <IOSDebuggerPort>33940</IOSDebuggerPort>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>x86_64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <MtouchTlsProvider>Default</MtouchTlsProvider>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchFloat32>true</MtouchFloat32>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <MtouchTlsProvider>Default</MtouchTlsProvider>
+    <PlatformTarget>x86</PlatformTarget>
+    <OptimizePNGs>false</OptimizePNGs>
+    <MtouchExtraArgs>-v -v -v -cxx -gcc_flags "-L${ProjectDir} -F${ProjectDir} -framework AudioToolbox -framework MediaPlayer -framework CoreMedia -framework AVFoundation -framework SystemConfiguration  -framework AVFoundation -lSystem -framework CoreMedia  -framework GoogleMaps  -framework GoogleMapsBase -framework GoogleMapsCore -lsqlite3 -lz -ObjC"</MtouchExtraArgs>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>x86_64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <MtouchTlsProvider>Default</MtouchTlsProvider>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer: Roberto Avanzi (UCA9RDAL8N)</CodesignKey>
+    <DeviceSpecificBuild>true</DeviceSpecificBuild>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchFastDev>false</MtouchFastDev>
+    <MtouchFloat32>true</MtouchFloat32>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <MtouchTlsProvider>Default</MtouchTlsProvider>
+    <PlatformTarget>x86</PlatformTarget>
+    <OptimizePNGs>false</OptimizePNGs>
+    <MtouchExtraArgs>-v -v -v -cxx -gcc_flags "-L${ProjectDir} -F${ProjectDir} -framework AudioToolbox -framework MediaPlayer -framework CoreMedia -framework AVFoundation -framework SystemConfiguration  -framework AVFoundation -lSystem -framework CoreMedia  -framework GoogleMaps  -framework GoogleMapsBase -framework GoogleMapsCore -lsqlite3 -lz -ObjC"</MtouchExtraArgs>
+    <CodesignProvision>PikkartWildCardDevProfile</CodesignProvision>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.iOS" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="LaunchScreen.storyboard" />
+    <InterfaceDefinition Include="Resources\PKTGeoElementViewDefault.xib" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist" />
+    <None Include="Entitlements.plist" />
+    <None Include="GoogleMapsBase.framework\GoogleMapsBase" />
+    <None Include="GoogleMapsBase.framework\Headers\GMSCompatabilityMacros.h" />
+    <None Include="GoogleMapsBase.framework\Headers\GMSCoordinateBounds.h" />
+    <None Include="GoogleMapsBase.framework\Headers\GoogleMapsBase.h" />
+    <None Include="GoogleMapsBase.framework\Modules\module.modulemap" />
+    <None Include="GoogleMapsBase.framework\Versions\A\GoogleMapsBase" />
+    <None Include="GoogleMapsBase.framework\Versions\A\Headers\GMSCompatabilityMacros.h" />
+    <None Include="GoogleMapsBase.framework\Versions\A\Headers\GMSCoordinateBounds.h" />
+    <None Include="GoogleMapsBase.framework\Versions\A\Headers\GoogleMapsBase.h" />
+    <None Include="GoogleMapsBase.framework\Versions\A\Modules\module.modulemap" />
+    <None Include="GoogleMapsBase.framework\Versions\Current\GoogleMapsBase" />
+    <None Include="GoogleMapsBase.framework\Versions\Current\Headers\GMSCompatabilityMacros.h" />
+    <None Include="GoogleMapsBase.framework\Versions\Current\Headers\GMSCoordinateBounds.h" />
+    <None Include="GoogleMapsBase.framework\Versions\Current\Headers\GoogleMapsBase.h" />
+    <None Include="GoogleMapsBase.framework\Versions\Current\Modules\module.modulemap" />
+    <None Include="GoogleMapsCore.framework\GoogleMapsCore" />
+    <None Include="GoogleMapsCore.framework\Headers\GoogleMapsCore.h" />
+    <None Include="GoogleMapsCore.framework\Modules\module.modulemap" />
+    <None Include="GoogleMapsCore.framework\Versions\A\GoogleMapsCore" />
+    <None Include="GoogleMapsCore.framework\Versions\A\Headers\GoogleMapsCore.h" />
+    <None Include="GoogleMapsCore.framework\Versions\A\Modules\module.modulemap" />
+    <None Include="GoogleMapsCore.framework\Versions\Current\GoogleMapsCore" />
+    <None Include="GoogleMapsCore.framework\Versions\Current\Headers\GoogleMapsCore.h" />
+    <None Include="GoogleMapsCore.framework\Versions\Current\Modules\module.modulemap" />
+    <None Include="GoogleMaps.framework\.DS_Store" />
+    <None Include="GoogleMaps.framework\GoogleMaps" />
+    <None Include="GoogleMaps.framework\Headers\GMSAddress.h" />
+    <None Include="GoogleMaps.framework\Headers\GMSCALayer.h" />
+    <None Include="GoogleMaps.framework\Headers\GMSCameraPosition.h" />
+    <None Include="GoogleMaps.framework\Headers\GMSCameraUpdate.h" />
+    <None Include="GoogleMaps.framework\Headers\GMSCircle.h" />
+    <None Include="GoogleMaps.framework\Headers\GMSCoordinateBounds+GoogleMaps.h" />
+    <None Include="GoogleMaps.framework\Headers\GMSDeprecationMacros.h" />
+    <None Include="GoogleMaps.framework\Headers\GMSGeocoder.h" />
+    <None Include="GoogleMaps.framework\Headers\GMSGeometryUtils.h" />
+    <None Include="GoogleMaps.framework\Headers\GMSGroundOverlay.h" />
+    <None Include="GoogleMaps.framework\Headers\GMSIndoorBuilding.h" />
+    <None Include="GoogleMaps.framework\Headers\GMSIndoorDisplay.h" />
+    <None Include="GoogleMaps.framework\Headers\GMSIndoorLevel.h" />
+    <None Include="GoogleMaps.framework\Headers\GMSMapLayer.h" />
+    <None Include="GoogleMaps.framework\Headers\GMSMapStyle.h" />
+    <None Include="GoogleMaps.framework\Headers\GMSMapView+Animation.h" />
+    <None Include="GoogleMaps.framework\Headers\GMSMapView.h" />
+    <None Include="GoogleMaps.framework\Headers\GMSMarker.h" />
+    <None Include="GoogleMaps.framework\Headers\GMSMarkerLayer.h" />
+    <None Include="GoogleMaps.framework\Headers\GMSMutablePath.h" />
+    <None Include="GoogleMaps.framework\Headers\GMSOrientation.h" />
+    <None Include="GoogleMaps.framework\Headers\GMSOverlay.h" />
+    <None Include="GoogleMaps.framework\Headers\GMSPanorama.h" />
+    <None Include="GoogleMaps.framework\Headers\GMSPanoramaCamera.h" />
+    <None Include="GoogleMaps.framework\Headers\GMSPanoramaCameraUpdate.h" />
+    <None Include="GoogleMaps.framework\Headers\GMSPanoramaLayer.h" />
+    <None Include="GoogleMaps.framework\Headers\GMSPanoramaLink.h" />
+    <None Include="GoogleMaps.framework\Headers\GMSPanoramaService.h" />
+    <None Include="GoogleMaps.framework\Headers\GMSPanoramaView.h" />
+    <None Include="GoogleMaps.framework\Headers\GMSPath.h" />
+    <None Include="GoogleMaps.framework\Headers\GMSPolygon.h" />
+    <None Include="GoogleMaps.framework\Headers\GMSPolyline.h" />
+    <None Include="GoogleMaps.framework\Headers\GMSProjection.h" />
+    <None Include="GoogleMaps.framework\Headers\GMSServices.h" />
+    <None Include="GoogleMaps.framework\Headers\GMSSyncTileLayer.h" />
+    <None Include="GoogleMaps.framework\Headers\GMSTileLayer.h" />
+    <None Include="GoogleMaps.framework\Headers\GMSUISettings.h" />
+    <None Include="GoogleMaps.framework\Headers\GMSURLTileLayer.h" />
+    <None Include="GoogleMaps.framework\Headers\GoogleMaps.h" />
+    <None Include="GoogleMaps.framework\Modules\module.modulemap" />
+    <None Include="GoogleMaps.framework\Resources\.DS_Store" />
+    <None Include="GoogleMaps.framework\Versions\.DS_Store" />
+    <None Include="GoogleMaps.framework\Versions\A\.DS_Store" />
+    <None Include="GoogleMaps.framework\Versions\A\GoogleMaps" />
+    <None Include="GoogleMaps.framework\Versions\A\Headers\GMSAddress.h" />
+    <None Include="GoogleMaps.framework\Versions\A\Headers\GMSCALayer.h" />
+    <None Include="GoogleMaps.framework\Versions\A\Headers\GMSCameraPosition.h" />
+    <None Include="GoogleMaps.framework\Versions\A\Headers\GMSCameraUpdate.h" />
+    <None Include="GoogleMaps.framework\Versions\A\Headers\GMSCircle.h" />
+    <None Include="GoogleMaps.framework\Versions\A\Headers\GMSCoordinateBounds+GoogleMaps.h" />
+    <None Include="GoogleMaps.framework\Versions\A\Headers\GMSDeprecationMacros.h" />
+    <None Include="GoogleMaps.framework\Versions\A\Headers\GMSGeocoder.h" />
+    <None Include="GoogleMaps.framework\Versions\A\Headers\GMSGeometryUtils.h" />
+    <None Include="GoogleMaps.framework\Versions\A\Headers\GMSGroundOverlay.h" />
+    <None Include="GoogleMaps.framework\Versions\A\Headers\GMSIndoorBuilding.h" />
+    <None Include="GoogleMaps.framework\Versions\A\Headers\GMSIndoorDisplay.h" />
+    <None Include="GoogleMaps.framework\Versions\A\Headers\GMSIndoorLevel.h" />
+    <None Include="GoogleMaps.framework\Versions\A\Headers\GMSMapLayer.h" />
+    <None Include="GoogleMaps.framework\Versions\A\Headers\GMSMapStyle.h" />
+    <None Include="GoogleMaps.framework\Versions\A\Headers\GMSMapView+Animation.h" />
+    <None Include="GoogleMaps.framework\Versions\A\Headers\GMSMapView.h" />
+    <None Include="GoogleMaps.framework\Versions\A\Headers\GMSMarker.h" />
+    <None Include="GoogleMaps.framework\Versions\A\Headers\GMSMarkerLayer.h" />
+    <None Include="GoogleMaps.framework\Versions\A\Headers\GMSMutablePath.h" />
+    <None Include="GoogleMaps.framework\Versions\A\Headers\GMSOrientation.h" />
+    <None Include="GoogleMaps.framework\Versions\A\Headers\GMSOverlay.h" />
+    <None Include="GoogleMaps.framework\Versions\A\Headers\GMSPanorama.h" />
+    <None Include="GoogleMaps.framework\Versions\A\Headers\GMSPanoramaCamera.h" />
+    <None Include="GoogleMaps.framework\Versions\A\Headers\GMSPanoramaCameraUpdate.h" />
+    <None Include="GoogleMaps.framework\Versions\A\Headers\GMSPanoramaLayer.h" />
+    <None Include="GoogleMaps.framework\Versions\A\Headers\GMSPanoramaLink.h" />
+    <None Include="GoogleMaps.framework\Versions\A\Headers\GMSPanoramaService.h" />
+    <None Include="GoogleMaps.framework\Versions\A\Headers\GMSPanoramaView.h" />
+    <None Include="GoogleMaps.framework\Versions\A\Headers\GMSPath.h" />
+    <None Include="GoogleMaps.framework\Versions\A\Headers\GMSPolygon.h" />
+    <None Include="GoogleMaps.framework\Versions\A\Headers\GMSPolyline.h" />
+    <None Include="GoogleMaps.framework\Versions\A\Headers\GMSProjection.h" />
+    <None Include="GoogleMaps.framework\Versions\A\Headers\GMSServices.h" />
+    <None Include="GoogleMaps.framework\Versions\A\Headers\GMSSyncTileLayer.h" />
+    <None Include="GoogleMaps.framework\Versions\A\Headers\GMSTileLayer.h" />
+    <None Include="GoogleMaps.framework\Versions\A\Headers\GMSUISettings.h" />
+    <None Include="GoogleMaps.framework\Versions\A\Headers\GMSURLTileLayer.h" />
+    <None Include="GoogleMaps.framework\Versions\A\Headers\GoogleMaps.h" />
+    <None Include="GoogleMaps.framework\Versions\A\Modules\module.modulemap" />
+    <None Include="GoogleMaps.framework\Versions\A\Resources\.DS_Store" />
+    <None Include="GoogleMaps.framework\Versions\Current\.DS_Store" />
+    <None Include="GoogleMaps.framework\Versions\Current\GoogleMaps" />
+    <None Include="GoogleMaps.framework\Versions\Current\Headers\GMSAddress.h" />
+    <None Include="GoogleMaps.framework\Versions\Current\Headers\GMSCALayer.h" />
+    <None Include="GoogleMaps.framework\Versions\Current\Headers\GMSCameraPosition.h" />
+    <None Include="GoogleMaps.framework\Versions\Current\Headers\GMSCameraUpdate.h" />
+    <None Include="GoogleMaps.framework\Versions\Current\Headers\GMSCircle.h" />
+    <None Include="GoogleMaps.framework\Versions\Current\Headers\GMSCoordinateBounds+GoogleMaps.h" />
+    <None Include="GoogleMaps.framework\Versions\Current\Headers\GMSDeprecationMacros.h" />
+    <None Include="GoogleMaps.framework\Versions\Current\Headers\GMSGeocoder.h" />
+    <None Include="GoogleMaps.framework\Versions\Current\Headers\GMSGeometryUtils.h" />
+    <None Include="GoogleMaps.framework\Versions\Current\Headers\GMSGroundOverlay.h" />
+    <None Include="GoogleMaps.framework\Versions\Current\Headers\GMSIndoorBuilding.h" />
+    <None Include="GoogleMaps.framework\Versions\Current\Headers\GMSIndoorDisplay.h" />
+    <None Include="GoogleMaps.framework\Versions\Current\Headers\GMSIndoorLevel.h" />
+    <None Include="GoogleMaps.framework\Versions\Current\Headers\GMSMapLayer.h" />
+    <None Include="GoogleMaps.framework\Versions\Current\Headers\GMSMapStyle.h" />
+    <None Include="GoogleMaps.framework\Versions\Current\Headers\GMSMapView+Animation.h" />
+    <None Include="GoogleMaps.framework\Versions\Current\Headers\GMSMapView.h" />
+    <None Include="GoogleMaps.framework\Versions\Current\Headers\GMSMarker.h" />
+    <None Include="GoogleMaps.framework\Versions\Current\Headers\GMSMarkerLayer.h" />
+    <None Include="GoogleMaps.framework\Versions\Current\Headers\GMSMutablePath.h" />
+    <None Include="GoogleMaps.framework\Versions\Current\Headers\GMSOrientation.h" />
+    <None Include="GoogleMaps.framework\Versions\Current\Headers\GMSOverlay.h" />
+    <None Include="GoogleMaps.framework\Versions\Current\Headers\GMSPanorama.h" />
+    <None Include="GoogleMaps.framework\Versions\Current\Headers\GMSPanoramaCamera.h" />
+    <None Include="GoogleMaps.framework\Versions\Current\Headers\GMSPanoramaCameraUpdate.h" />
+    <None Include="GoogleMaps.framework\Versions\Current\Headers\GMSPanoramaLayer.h" />
+    <None Include="GoogleMaps.framework\Versions\Current\Headers\GMSPanoramaLink.h" />
+    <None Include="GoogleMaps.framework\Versions\Current\Headers\GMSPanoramaService.h" />
+    <None Include="GoogleMaps.framework\Versions\Current\Headers\GMSPanoramaView.h" />
+    <None Include="GoogleMaps.framework\Versions\Current\Headers\GMSPath.h" />
+    <None Include="GoogleMaps.framework\Versions\Current\Headers\GMSPolygon.h" />
+    <None Include="GoogleMaps.framework\Versions\Current\Headers\GMSPolyline.h" />
+    <None Include="GoogleMaps.framework\Versions\Current\Headers\GMSProjection.h" />
+    <None Include="GoogleMaps.framework\Versions\Current\Headers\GMSServices.h" />
+    <None Include="GoogleMaps.framework\Versions\Current\Headers\GMSSyncTileLayer.h" />
+    <None Include="GoogleMaps.framework\Versions\Current\Headers\GMSTileLayer.h" />
+    <None Include="GoogleMaps.framework\Versions\Current\Headers\GMSUISettings.h" />
+    <None Include="GoogleMaps.framework\Versions\Current\Headers\GMSURLTileLayer.h" />
+    <None Include="GoogleMaps.framework\Versions\Current\Headers\GoogleMaps.h" />
+    <None Include="GoogleMaps.framework\Versions\Current\Modules\module.modulemap" />
+    <None Include="GoogleMaps.framework\Versions\Current\Resources\.DS_Store" />
+    <None Include="packages.config" />
+    <None Include="OpenTK.dll.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="ViewController.cs" />
+    <Compile Include="ViewController.designer.cs">
+      <DependentUpon>ViewController.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\Info.plist" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\bubble_left.png" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\bubble_left%402x.png" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\bubble_left%403x.png" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\bubble_right.png" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\bubble_right%402x.png" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\bubble_right%403x.png" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\default_marker.png" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\default_marker%402x.png" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\default_marker%403x.png" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\oss_licenses_maps.txt.gz" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCacheStorage.momd\Storage.mom" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCacheStorage.momd\Storage.omo" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCacheStorage.momd\VersionInfo.plist" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\DroidSansMerged-Regular.ttf" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\GMSNavNightModeSprites-0-1x.png" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\GMSNavNightModeSprites-0-2x.png" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\GMSNavNightModeSprites-0-3x.png" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\GMSNavSprites-0-1x.png" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\GMSNavSprites-0-2x.png" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\GMSNavSprites-0-3x.png" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\GMSSprites-0-1x.png" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\GMSSprites-0-2x.png" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\GMSSprites-0-3x.png" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\Info.plist" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\Roboto-Black.ttf" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\Roboto-BlackItalic.ttf" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\Roboto-Bold.ttf" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\Roboto-BoldItalic.ttf" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\Roboto-Italic.ttf" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\Roboto-Light.ttf" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\Roboto-LightItalic.ttf" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\Roboto-Medium.ttf" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\Roboto-MediumItalic.ttf" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\Roboto-Regular.ttf" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\Roboto-Thin.ttf" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\Roboto-ThinItalic.ttf" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\RobotoCondensed-Italic.ttf" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\RobotoCondensed-Regular.ttf" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\Siemreap.ttf" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\Tharlon-Regular.ttf" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\button_background.png" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\button_background%402x.png" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\button_background%403x.png" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\button_compass.png" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\button_compass%402x.png" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\button_compass_night.png" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\button_compass_night%402x.png" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\button_my_location.png" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\button_my_location%402x.png" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\dav_one_way_16_256.png" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\googlelogo_56x20_with_2_stroke_color_60x22pt.png" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\googlelogo_56x20_with_2_stroke_color_60x22pt%402x.png" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\googlelogo_56x20_with_2_stroke_color_60x22pt%403x.png" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\googlelogo_light_56x20_with_2_stroke_color_60x22pt.png" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\googlelogo_light_56x20_with_2_stroke_color_60x22pt%402x.png" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\googlelogo_light_56x20_with_2_stroke_color_60x22pt%403x.png" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\ic_compass_needle.png" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\ic_compass_needle%402x.png" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\ic_qu_direction_mylocation.png" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\ic_qu_direction_mylocation%402x.png" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\ic_qu_direction_mylocation%403x.png" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\polyline_colors_texture.png" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\polyline_colors_texture_dim.png" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\road_1-1.png" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\road_128-32.png" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\road_16-4.png" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\road_2-1.png" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\road_256-64.png" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\road_32-8.png" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\road_4-1.png" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\road_64-16.png" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\road_8-2.png" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\ar.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\ca.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\cs.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\da.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\de.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\el.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\en.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\en_AU.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\en_GB.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\en_IN.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\es.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\es_419.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\es_MX.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\fi.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\fr.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\fr_CA.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\he.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\hi.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\hr.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\hu.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\id.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\it.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\ja.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\ko.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\ms.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\nb.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\nl.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\pl.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\pt.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\pt_BR.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\pt_PT.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\ro.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\ru.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\sk.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\sv.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\th.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\tr.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\uk.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\vi.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\zh_CN.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\zh_HK.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\zh_TW.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Resources\GoogleMaps.bundle\en.lproj\InfoPlist.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\Info.plist" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\bubble_left.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\bubble_left%402x.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\bubble_left%403x.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\bubble_right.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\bubble_right%402x.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\bubble_right%403x.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\default_marker.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\default_marker%402x.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\default_marker%403x.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\oss_licenses_maps.txt.gz" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCacheStorage.momd\Storage.mom" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCacheStorage.momd\Storage.omo" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCacheStorage.momd\VersionInfo.plist" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\DroidSansMerged-Regular.ttf" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\GMSNavNightModeSprites-0-1x.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\GMSNavNightModeSprites-0-2x.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\GMSNavNightModeSprites-0-3x.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\GMSNavSprites-0-1x.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\GMSNavSprites-0-2x.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\GMSNavSprites-0-3x.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\GMSSprites-0-1x.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\GMSSprites-0-2x.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\GMSSprites-0-3x.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\Info.plist" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\Roboto-Black.ttf" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\Roboto-BlackItalic.ttf" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\Roboto-Bold.ttf" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\Roboto-BoldItalic.ttf" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\Roboto-Italic.ttf" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\Roboto-Light.ttf" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\Roboto-LightItalic.ttf" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\Roboto-Medium.ttf" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\Roboto-MediumItalic.ttf" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\Roboto-Regular.ttf" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\Roboto-Thin.ttf" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\Roboto-ThinItalic.ttf" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\RobotoCondensed-Italic.ttf" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\RobotoCondensed-Regular.ttf" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\Siemreap.ttf" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\Tharlon-Regular.ttf" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\button_background.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\button_background%402x.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\button_background%403x.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\button_compass.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\button_compass%402x.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\button_compass_night.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\button_compass_night%402x.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\button_my_location.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\button_my_location%402x.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\dav_one_way_16_256.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\googlelogo_56x20_with_2_stroke_color_60x22pt.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\googlelogo_56x20_with_2_stroke_color_60x22pt%402x.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\googlelogo_56x20_with_2_stroke_color_60x22pt%403x.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\googlelogo_light_56x20_with_2_stroke_color_60x22pt.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\googlelogo_light_56x20_with_2_stroke_color_60x22pt%402x.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\googlelogo_light_56x20_with_2_stroke_color_60x22pt%403x.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\ic_compass_needle.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\ic_compass_needle%402x.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\ic_qu_direction_mylocation.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\ic_qu_direction_mylocation%402x.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\ic_qu_direction_mylocation%403x.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\polyline_colors_texture.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\polyline_colors_texture_dim.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\road_1-1.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\road_128-32.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\road_16-4.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\road_2-1.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\road_256-64.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\road_32-8.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\road_4-1.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\road_64-16.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\road_8-2.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\ar.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\ca.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\cs.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\da.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\de.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\el.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\en.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\en_AU.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\en_GB.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\en_IN.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\es.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\es_419.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\es_MX.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\fi.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\fr.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\fr_CA.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\he.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\hi.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\hr.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\hu.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\id.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\it.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\ja.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\ko.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\ms.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\nb.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\nl.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\pl.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\pt.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\pt_BR.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\pt_PT.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\ro.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\ru.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\sk.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\sv.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\th.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\tr.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\uk.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\vi.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\zh_CN.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\zh_HK.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\zh_TW.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\A\Resources\GoogleMaps.bundle\en.lproj\InfoPlist.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\Info.plist" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\bubble_left.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\bubble_left%402x.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\bubble_left%403x.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\bubble_right.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\bubble_right%402x.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\bubble_right%403x.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\default_marker.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\default_marker%402x.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\default_marker%403x.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\oss_licenses_maps.txt.gz" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCacheStorage.momd\Storage.mom" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCacheStorage.momd\Storage.omo" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCacheStorage.momd\VersionInfo.plist" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\DroidSansMerged-Regular.ttf" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\GMSNavNightModeSprites-0-1x.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\GMSNavNightModeSprites-0-2x.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\GMSNavNightModeSprites-0-3x.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\GMSNavSprites-0-1x.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\GMSNavSprites-0-2x.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\GMSNavSprites-0-3x.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\GMSSprites-0-1x.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\GMSSprites-0-2x.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\GMSSprites-0-3x.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\Info.plist" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\Roboto-Black.ttf" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\Roboto-BlackItalic.ttf" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\Roboto-Bold.ttf" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\Roboto-BoldItalic.ttf" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\Roboto-Italic.ttf" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\Roboto-Light.ttf" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\Roboto-LightItalic.ttf" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\Roboto-Medium.ttf" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\Roboto-MediumItalic.ttf" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\Roboto-Regular.ttf" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\Roboto-Thin.ttf" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\Roboto-ThinItalic.ttf" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\RobotoCondensed-Italic.ttf" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\RobotoCondensed-Regular.ttf" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\Siemreap.ttf" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\Tharlon-Regular.ttf" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\button_background.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\button_background%402x.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\button_background%403x.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\button_compass.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\button_compass%402x.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\button_compass_night.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\button_compass_night%402x.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\button_my_location.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\button_my_location%402x.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\dav_one_way_16_256.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\googlelogo_56x20_with_2_stroke_color_60x22pt.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\googlelogo_56x20_with_2_stroke_color_60x22pt%402x.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\googlelogo_56x20_with_2_stroke_color_60x22pt%403x.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\googlelogo_light_56x20_with_2_stroke_color_60x22pt.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\googlelogo_light_56x20_with_2_stroke_color_60x22pt%402x.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\googlelogo_light_56x20_with_2_stroke_color_60x22pt%403x.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\ic_compass_needle.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\ic_compass_needle%402x.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\ic_qu_direction_mylocation.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\ic_qu_direction_mylocation%402x.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\ic_qu_direction_mylocation%403x.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\polyline_colors_texture.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\polyline_colors_texture_dim.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\road_1-1.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\road_128-32.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\road_16-4.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\road_2-1.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\road_256-64.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\road_32-8.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\road_4-1.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\road_64-16.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\road_8-2.png" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\ar.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\ca.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\cs.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\da.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\de.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\el.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\en.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\en_AU.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\en_GB.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\en_IN.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\es.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\es_419.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\es_MX.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\fi.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\fr.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\fr_CA.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\he.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\hi.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\hr.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\hu.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\id.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\it.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\ja.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\ko.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\ms.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\nb.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\nl.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\pl.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\pt.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\pt_BR.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\pt_PT.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\ro.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\ru.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\sk.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\sv.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\th.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\tr.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\uk.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\vi.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\zh_CN.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\zh_HK.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\GMSCoreResources.bundle\zh_TW.lproj\GMSCore.strings" />
+    <BundleResource Include="GoogleMaps.framework\Versions\Current\Resources\GoogleMaps.bundle\en.lproj\InfoPlist.strings" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\Info.plist" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\bubble_left.png" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\bubble_left%402x.png" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\bubble_left%403x.png" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\bubble_right.png" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\bubble_right%402x.png" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\bubble_right%403x.png" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\default_marker.png" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\default_marker%402x.png" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\default_marker%403x.png" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\oss_licenses_maps.txt.gz" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCacheStorage.momd\Storage.mom" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCacheStorage.momd\Storage.omo" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCacheStorage.momd\VersionInfo.plist" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\DroidSansMerged-Regular.ttf" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\GMSNavNightModeSprites-0-1x.png" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\GMSNavNightModeSprites-0-2x.png" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\GMSNavNightModeSprites-0-3x.png" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\GMSNavSprites-0-1x.png" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\GMSNavSprites-0-2x.png" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\GMSNavSprites-0-3x.png" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\GMSSprites-0-1x.png" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\GMSSprites-0-2x.png" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\GMSSprites-0-3x.png" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\Info.plist" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\Roboto-Black.ttf" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\Roboto-BlackItalic.ttf" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\Roboto-Bold.ttf" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\Roboto-BoldItalic.ttf" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\Roboto-Italic.ttf" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\Roboto-Light.ttf" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\Roboto-LightItalic.ttf" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\Roboto-Medium.ttf" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\Roboto-MediumItalic.ttf" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\Roboto-Regular.ttf" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\Roboto-Thin.ttf" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\Roboto-ThinItalic.ttf" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\RobotoCondensed-Italic.ttf" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\RobotoCondensed-Regular.ttf" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\Siemreap.ttf" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\Tharlon-Regular.ttf" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\button_background.png" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\button_background%402x.png" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\button_background%403x.png" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\button_compass.png" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\button_compass%402x.png" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\button_compass_night.png" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\button_compass_night%402x.png" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\button_my_location.png" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\button_my_location%402x.png" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\dav_one_way_16_256.png" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\googlelogo_56x20_with_2_stroke_color_60x22pt.png" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\googlelogo_56x20_with_2_stroke_color_60x22pt%402x.png" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\googlelogo_56x20_with_2_stroke_color_60x22pt%403x.png" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\googlelogo_light_56x20_with_2_stroke_color_60x22pt.png" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\googlelogo_light_56x20_with_2_stroke_color_60x22pt%402x.png" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\googlelogo_light_56x20_with_2_stroke_color_60x22pt%403x.png" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\ic_compass_needle.png" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\ic_compass_needle%402x.png" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\ic_qu_direction_mylocation.png" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\ic_qu_direction_mylocation%402x.png" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\ic_qu_direction_mylocation%403x.png" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\polyline_colors_texture.png" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\polyline_colors_texture_dim.png" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\road_1-1.png" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\road_128-32.png" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\road_16-4.png" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\road_2-1.png" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\road_256-64.png" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\road_32-8.png" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\road_4-1.png" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\road_64-16.png" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\road_8-2.png" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\ar.lproj\GMSCore.strings" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\ca.lproj\GMSCore.strings" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\cs.lproj\GMSCore.strings" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\da.lproj\GMSCore.strings" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\de.lproj\GMSCore.strings" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\el.lproj\GMSCore.strings" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\en.lproj\GMSCore.strings" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\en_AU.lproj\GMSCore.strings" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\en_GB.lproj\GMSCore.strings" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\en_IN.lproj\GMSCore.strings" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\es.lproj\GMSCore.strings" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\es_419.lproj\GMSCore.strings" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\es_MX.lproj\GMSCore.strings" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\fi.lproj\GMSCore.strings" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\fr.lproj\GMSCore.strings" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\fr_CA.lproj\GMSCore.strings" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\he.lproj\GMSCore.strings" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\hi.lproj\GMSCore.strings" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\hr.lproj\GMSCore.strings" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\hu.lproj\GMSCore.strings" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\id.lproj\GMSCore.strings" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\it.lproj\GMSCore.strings" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\ja.lproj\GMSCore.strings" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\ko.lproj\GMSCore.strings" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\ms.lproj\GMSCore.strings" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\nb.lproj\GMSCore.strings" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\nl.lproj\GMSCore.strings" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\pl.lproj\GMSCore.strings" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\pt.lproj\GMSCore.strings" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\pt_BR.lproj\GMSCore.strings" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\pt_PT.lproj\GMSCore.strings" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\ro.lproj\GMSCore.strings" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\ru.lproj\GMSCore.strings" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\sk.lproj\GMSCore.strings" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\sv.lproj\GMSCore.strings" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\th.lproj\GMSCore.strings" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\tr.lproj\GMSCore.strings" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\uk.lproj\GMSCore.strings" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\vi.lproj\GMSCore.strings" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\zh_CN.lproj\GMSCore.strings" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\zh_HK.lproj\GMSCore.strings" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\GMSCoreResources.bundle\zh_TW.lproj\GMSCore.strings" />
+    <BundleResource Include="Resources\GoogleMaps.bundle\en.lproj\InfoPlist.strings" />
+    <BundleResource Include="Resources\license.spz" />
+    <BundleResource Include="Resources\map-marker-Black%402x.png" />
+    <BundleResource Include="Resources\map-marker-Black%403x.png" />
+    <BundleResource Include="Resources\map-marker-Brown%402x.png" />
+    <BundleResource Include="Resources\map-marker-Brown%403x.png" />
+    <BundleResource Include="Resources\map-marker-Orange%402x.png" />
+    <BundleResource Include="Resources\map-marker-Orange%403x.png" />
+    <BundleResource Include="Resources\map-marker-Yellow%402x.png" />
+    <BundleResource Include="Resources\map-marker-Yellow%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\.DS_Store" />
+    <ImageAsset Include="Assets.xcassets\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+</Project>
